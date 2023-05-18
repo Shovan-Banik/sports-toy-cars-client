@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 const Footer = () => {
     return (
-        <div className='bg-[#c7d2fe]'>
-            <footer className="footer p-10  text-base-content">
+        <div className='bg-[black] mt-12 text-lime-50 rounded-xl'>
+            <footer className="footer p-10  text-lime-50">
                 <div>
-                    <img className='w-48' src={logo} alt="" />
+                    <Link to='/'><img className='w-48' src={logo} alt="" /></Link>
                     <p className='text-3xl font-bold'>Sports Toy Cars</p>
                 </div>
                 <div>
