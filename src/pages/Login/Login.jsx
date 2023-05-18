@@ -1,14 +1,40 @@
 import Lottie from "lottie-react";
 import animation from '../../assets/68312-login.json'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import { FaGoogle } from 'react-icons/fa';
+
 const Login = () => {
+
+    const{signIn,googleSignIn}=useContext(AuthContext);
+    const navigate=useNavigate();
 
     const handleLogIn=event=>{
         event.preventDefault();
         const form=event.target;
         const email=form.email.value;
         const password=form.password.value;
-        console.log(email,password);
+        signIn(email,password)
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+            navigate('/');
+        })
+        .then(error=>console.log(error))
+    }
+
+    const handleGoogleLogin=()=>{
+        googleSignIn()
+        .then(result=>{
+            const googleLoggedUser=result.user;
+            console.log(googleLoggedUser);
+            navigate('/');
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+
     }
 
 
@@ -40,6 +66,11 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Login" />
+                            </div>
+                            <div className='mt-2'>
+                                <button onClick={handleGoogleLogin} className="btn btn-primary btn-block gap-2">
+                                    Sign In with Google<FaGoogle className="text-xl"></FaGoogle>
+                                </button>
                             </div>
                         </form>
                     </div>

@@ -1,18 +1,43 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import animation from '../../assets/93385-login.json'
 import Lottie from "lottie-react";
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 const SignUp = () => {
+    const { createUser, profileUpdate,googleSignIn} = useContext(AuthContext);
+    const navigate=useNavigate();
 
-    const handleSignUp=event=>{
-       event.preventDefault();
-        const form=event.target;
-        const name=form.name.value;
-        const photo=form.photo.value;
-        const email=form.email.value;
-        const password=form.password.value;
-        console.log(name,photo,email,password);
+    const handleSignUp = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                profileUpdate(name, photo);
+                navigate('/login');
+            })
+            .catch(error => console.log(error));
+    }
+
+    const handleGoogleLogin=()=>{
+        googleSignIn()
+        .then(result=>{
+            const googleLoggedUser=result.user;
+            console.log(googleLoggedUser);
+            navigate('/');
+        })
+        .catch(error=>{
+            console.log(error);
+        })
 
     }
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center md:mt-12">
             <div>
@@ -52,6 +77,11 @@ const SignUp = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="SignUp" />
+                            </div>
+                            <div className='mt-2'>
+                                <button onClick={handleGoogleLogin} className="btn btn-primary btn-block gap-2">
+                                    Sign In with Google<FaGoogle className='text-xl'></FaGoogle>
+                                </button>
                             </div>
                         </form>
                     </div>
