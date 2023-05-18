@@ -2,6 +2,17 @@ import { Link } from 'react-router-dom';
 import animation from '../../assets/93385-login.json'
 import Lottie from "lottie-react";
 const SignUp = () => {
+
+    const handleSignUp=event=>{
+       event.preventDefault();
+        const form=event.target;
+        const name=form.name.value;
+        const photo=form.photo.value;
+        const email=form.email.value;
+        const password=form.password.value;
+        console.log(name,photo,email,password);
+
+    }
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center md:mt-12">
             <div>
@@ -11,12 +22,18 @@ const SignUp = () => {
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <h2 className="text-3xl text-center text-blue-800 font-bold my-5">Sign Up Please</h2>
-                        <form /* onSubmit={handleSignUp} */>
+                        <form onSubmit={handleSignUp}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input type="text" placeholder="Your Name" name="name" className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input type="text" placeholder="Your image" name="photo" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">

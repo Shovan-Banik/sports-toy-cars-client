@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 const Footer = () => {
     return (
-        <div className='bg-[black] mt-12 text-lime-50 rounded-xl'>
+        <div className='bg-[#3730a3] mt-12 text-lime-50 rounded-xl'>
             <footer className="footer p-10  text-lime-50">
                 <div>
                     <Link to='/'><img className='w-48' src={logo} alt="" /></Link>
