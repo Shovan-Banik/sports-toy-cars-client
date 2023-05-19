@@ -18,10 +18,15 @@ const Navbar = () => {
         <li><Link to='/blog'>Blog</Link></li>
         <li>
             {
-                user ? <button onClick={handleLogOut}>LogOut</button> :
-                    <Link to='/login'><button>Login</button></Link>
+                user && <Link to='/addAToy'><button>Add a Toy</button></Link>
             }
         </li>
+        <li>
+            {
+                user && <Link to='/myToy'><button>My Toy</button></Link>
+            }
+        </li>
+
     </>
     return (
         <div className="navbar bg-base-100">
@@ -43,7 +48,15 @@ const Navbar = () => {
                     {items}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end mr-4">
+                <div>
+                    <li className="list-none">
+                        {
+                            user ? <button className="btn-sm btn-primary rounded mr-4" onClick={handleLogOut}>LogOut</button> :
+                                <Link to='/login'><button className="btn-sm btn-primary rounded mr-4">Login</button></Link>
+                        }
+                    </li>
+                </div>
                 <div>
                     <label className="btn btn-ghost btn-circle avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
                         <div className="rounded-full">

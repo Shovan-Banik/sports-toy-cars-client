@@ -1,9 +1,11 @@
 import Marquee from "react-fast-marquee";
 const PhotoGalary = () => {
     return (
-        <div className="mt-12">
+        <div className="mt-16">
             <div>
-                <h2 className="text-5xl font-bold text-center">Photo Gallery</h2>
+                <hr className='w-1/4 mx-auto bg-cyan-800 h-1'/>
+                <h2 className="text-5xl font-bold text-center my-5">Photo Gallery</h2>
+                <hr className='w-1/4 mx-auto bg-cyan-800 h-1'/>
             </div>
             <Marquee speed={150} pauseOnHover={true}>
                 <div className="carousel carousel-end rounded-box h-[500px]">
