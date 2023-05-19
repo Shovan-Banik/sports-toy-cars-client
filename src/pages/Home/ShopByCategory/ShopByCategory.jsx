@@ -21,13 +21,13 @@ const ShopByCategory = () => {
     return (
         <div className='mt-12'>
             <hr className='w-1/3 mx-auto bg-cyan-800 h-1'/>
-            <h2 className='text-5xl text-center font-bold my-4'>Shop By Category</h2>
+            <h2 className='text-5xl text-center font-bold my-4 text-blue-800'>Shop By Category</h2>
             <hr className='w-1/3 mx-auto mb-8 bg-cyan-800 h-1'/>
             <Tabs>
                 <TabList className='md:w-1/4 mx-auto md:flex mb-12'>
                     <Tab className="mr-2 px-4 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('bmw')}>BMW</Tab>
-                    <Tab className="mr-2 px-4 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('lamborgini')}>Lamborgini</Tab>
-                    <Tab className="mr-2 px-4 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('marcidies')}>Marcidies</Tab>
+                    <Tab className="mr-2 px-4 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('lamborgini')}>Lamborghini</Tab>
+                    <Tab className="mr-2 px-4 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('marcidies')}>Mercedes</Tab>
                 </TabList>
                 <TabPanel>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>

@@ -4,7 +4,7 @@ const PhotoGalary = () => {
         <div className="mt-16">
             <div>
                 <hr className='w-1/4 mx-auto bg-cyan-800 h-1'/>
-                <h2 className="text-5xl font-bold text-center my-5">Photo Gallery</h2>
+                <h2 className="text-5xl font-bold text-center my-5 text-blue-800">Photo Gallery</h2>
                 <hr className='w-1/4 mx-auto bg-cyan-800 h-1'/>
             </div>
             <Marquee speed={150} pauseOnHover={true}>
