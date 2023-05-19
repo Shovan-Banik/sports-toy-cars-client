@@ -6,7 +6,7 @@ const CategoryCard = ({ toy }) => {
         <div className="card w-full bg-base-100 shadow-2xl border relative group overflow-hidden">
             <figure>
                 <img
-                    className="h-[400px] transition-transform duration-300 transform-gpu group-hover:scale-105"
+                    className="h-[300px] transition-transform duration-300 transform-gpu group-hover:scale-105"
                     src={image}
                     alt="car"
                 />
