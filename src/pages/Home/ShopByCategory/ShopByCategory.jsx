@@ -25,8 +25,8 @@ const ShopByCategory = () => {
             <Tabs>
                 <TabList className='md:w-1/4 mx-auto md:flex mb-12'>
                     <Tab className="mr-2 px-4 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('bmw')}>BMW</Tab>
-                    <Tab className="mr-2 px-4 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('lamborgini')}>Lamborghini</Tab>
-                    <Tab className="mr-2 px-4 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('marcidies')}>Mercedes</Tab>
+                    <Tab className="mr-2 px-4 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('lamborghini')}>Lamborghini</Tab>
+                    <Tab className="mr-2 px-4 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('mercedes')}>Mercedes</Tab>
                 </TabList>
                 <TabPanel>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>

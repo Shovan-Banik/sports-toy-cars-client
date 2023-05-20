@@ -61,7 +61,7 @@ const UpdateToy = () => {
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Name</span>
                             </label>
-                            <input type="text" name="name" required defaultValue={name} className="input input-bordered" />
+                            <input type="text" name="name" required readOnly defaultValue={name} className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -91,36 +91,26 @@ const UpdateToy = () => {
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Rating</span>
                             </label>
-                            <input type="number" min={0} max={5} step="any" defaultValue={rating} required name="rating" className="input input-bordered" />
+                            <input type="number" readOnly min={0} max={5} step="any" defaultValue={rating} required name="rating" className="input input-bordered" />
 
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Photo URL</span>
                             </label>
-                            <input type="url" name="image" defaultValue={image} className="input input-bordered" />
+                            <input type="url" readOnly name="image" defaultValue={image} className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800"> Please select an option</span>
                             </label>
-                            {/* <select required className=" input-bordered max-w-xs font-bold text-blue-800" name="subCategory">
-                                <option disabled>Sub-Category</option>
-                                <option value="bmw">BMW</option>
-                                <option value="marcidies">Mercedes</option>
-                                <option value="lamborgini">Lamborghini</option>
-                            </select> */}
-                            <select
-                                className="block px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-                                name="subCategory"
-                                required
-                            >
+                            <select className="block px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="subCategory" disabled>
                                 <option disabled>
                                     Category
                                 </option>
                                 <option value="bmw">BMW</option>
-                                <option value="marcidies">Mercedes</option>
-                                <option value="lamborgini">Lamborghini</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="lamborghini">Lamborghini</option>
                             </select>
                         </div>
                     </div>
