@@ -4,9 +4,11 @@ import Lottie from "lottie-react";
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
+import useTitle from '../../hooks/useTitle';
 const SignUp = () => {
     const [err,setErr]=useState("");
     const { createUser, profileUpdate,googleSignIn} = useContext(AuthContext);
+    useTitle('SignUp');
     const navigate=useNavigate();
 
     const handleSignUp = event => {

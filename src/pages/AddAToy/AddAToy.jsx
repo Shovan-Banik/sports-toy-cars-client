@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from "../../hooks/useTitle";
 
 const AddAToy = () => {
     const { user } = useContext(AuthContext);
+    useTitle('AddToy');
 
     const handleAddToy = event => {
         event.preventDefault();

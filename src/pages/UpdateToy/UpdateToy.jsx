@@ -3,12 +3,14 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
     const { name, availableQuantity, price, rating, image,description } = useLoaderData();
     console.log(name, availableQuantity);
     const { id } = useParams();
     const { user } = useContext(AuthContext);
+    useTitle('UpdateToy');
 
     const handleUpdateToy = event => {
         event.preventDefault();

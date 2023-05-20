@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const ViewDetails = () => {
     const { id } = useParams();
     const [detailsData, setDetailsData] = useState({});
     const { image, name, description, price, rating, subCategory,availableQuantity } = detailsData;
+    useTitle('ViewDetails');
 
     useEffect(() => {
         fetch(`http://localhost:5000/toy/${id}`)

@@ -2,10 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyToyRow from "./MyToyRow";
 import Swal from 'sweetalert2'
+import useTitle from "../../hooks/useTitle";
 
 const MyToy = () => {
     const [myToys, setMyToys] = useState([]);
-
+    useTitle('MyToy');
     const{user,loading}=useContext(AuthContext);
 
     useEffect(() => {
