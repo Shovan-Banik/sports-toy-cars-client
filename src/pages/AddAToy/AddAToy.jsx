@@ -42,7 +42,8 @@ const AddAToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                toast("Updated Successfully!");
+                toast("Added Successfully!");
+                form.reset();
             })
     };
     return (
