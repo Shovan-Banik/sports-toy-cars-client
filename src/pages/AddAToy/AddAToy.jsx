@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddAToy = () => {
     const { user } = useContext(AuthContext);
@@ -40,6 +42,7 @@ const AddAToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                toast("Updated Successfully!");
             })
     };
     return (
@@ -95,11 +98,23 @@ const AddAToy = () => {
                         <label className="label">
                                 <span className="label-text font-bold text-blue-800"> Please select an option</span>
                             </label>
-                            <select required className="select input-bordered max-w-xs font-bold text-blue-800" name="subCategory">
+                            {/* <select required className="select input-bordered max-w-xs font-bold text-blue-800" name="subCategory">
                                 <option disabled selected value=''>Sub-Category</option>
                                 <option>bmw</option>
                                 <option >marcidies</option>
                                 <option >lamborgini</option>
+                            </select> */}
+                            <select
+                                className="block px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                                name="subCategory"
+                                required
+                            >
+                                <option disabled>
+                                    Category
+                                </option>
+                                <option value="bmw">BMW</option>
+                                <option value="marcidies">Mercedes</option>
+                                <option value="lamborgini">Lamborghini</option>
                             </select>
                         </div>
                     </div>
@@ -114,6 +129,7 @@ const AddAToy = () => {
                     </div>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     )
 };

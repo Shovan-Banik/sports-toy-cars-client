@@ -8,7 +8,7 @@ const PhotoGalary = () => {
                 <hr className='w-1/4 mx-auto bg-cyan-800 h-1'/>
             </div>
             <Marquee speed={150} pauseOnHover={true}>
-                <div className="carousel carousel-end rounded-box h-[500px]">
+                <div className="carousel carousel-end rounded-box h-[400px]">
                     <div className="carousel-item">
                         <img src="https://i.postimg.cc/rpWPd90s/car1.jpg" alt="car" />
                     </div>

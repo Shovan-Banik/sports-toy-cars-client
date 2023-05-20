@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyToyRow from "./MyToyRow";
+import Swal from 'sweetalert2'
+
 const MyToy = () => {
     const [myToys, setMyToys] = useState([]);
 
@@ -20,23 +22,37 @@ const MyToy = () => {
         return <div className="mt-12 flex justify-center"><progress className="progress w-56 mt-12"></progress>;</div>
     }
 
-    const handleDelete=(id)=>{
-        const procced=confirm('are you sure to delete?')
-        if(procced){
-            fetch(`http://localhost:5000/myToy/${id}`,{
-                method: "DELETE"
+    const handleDelete = (id) => {
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            fetch(`http://localhost:5000/myToy/${id}`, {
+              method: 'DELETE'
             })
-            .then(res=>res.json())
-            .then(data=>{
+              .then(res => res.json())
+              .then(data => {
                 console.log(data);
-                if(data.deletedCount>0){
-                    alert('deleted successful');
-                    const remaining=myToys.filter(remainingToy=>remainingToy._id!==id);
-                    setMyToys(remaining);
+                if (data.deletedCount > 0) {
+                  Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                  );
+                  const remaining = myToys.filter(remainingToy => remainingToy._id !== id);
+                  setMyToys(remaining);
                 }
-            })
-        }
-    }
+              })
+          }
+        });
+      };
+    
     return (
         <div>
             <div className="mt-5">
