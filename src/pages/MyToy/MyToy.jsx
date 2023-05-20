@@ -19,6 +19,24 @@ const MyToy = () => {
     if(loading){
         return <div className="mt-12 flex justify-center"><progress className="progress w-56 mt-12"></progress>;</div>
     }
+
+    const handleDelete=(id)=>{
+        const procced=confirm('are you sure to delete?')
+        if(procced){
+            fetch(`http://localhost:5000/myToy/${id}`,{
+                method: "DELETE"
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                if(data.deletedCount>0){
+                    alert('deleted successful');
+                    const remaining=myToys.filter(remainingToy=>remainingToy._id!==id);
+                    setMyToys(remaining);
+                }
+            })
+        }
+    }
     return (
         <div>
             <div className="mt-5">
@@ -44,6 +62,7 @@ const MyToy = () => {
                             key={myToy._id}
                             myToy={myToy}
                             index={index}
+                            handleDelete={handleDelete}
                             ></MyToyRow>
                         ))}
                     </tbody>
