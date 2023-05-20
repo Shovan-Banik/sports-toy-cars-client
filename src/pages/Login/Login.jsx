@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import animation from '../../assets/68312-login.json'
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle } from 'react-icons/fa';
@@ -9,6 +9,9 @@ const Login = () => {
 
     const{signIn,googleSignIn}=useContext(AuthContext);
     const navigate=useNavigate();
+    const location=useLocation();
+
+    const from=location.state?.from?.pathname || '/';
 
     const handleLogIn=event=>{
         event.preventDefault();
@@ -19,17 +22,16 @@ const Login = () => {
         .then(result=>{
             const user=result.user;
             console.log(user);
-            navigate('/');
+            navigate(from,{replace:true});
         })
         .then(error=>console.log(error))
     }
-
     const handleGoogleLogin=()=>{
         googleSignIn()
         .then(result=>{
             const googleLoggedUser=result.user;
             console.log(googleLoggedUser);
-            navigate('/');
+            navigate(navigate(from,{replace:true}));
         })
         .catch(error=>{
             console.log(error);

@@ -52,13 +52,13 @@ const AddAToy = () => {
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="Name" className="input input-bordered" />
+                            <input type="text" name="name" required placeholder="Name" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Available Quantity</span>
                             </label>
-                            <input type="text" placeholder="Quantity" name="quantity" className="input input-bordered" />
+                            <input type="text" placeholder="Quantity" required name="quantity" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -76,28 +76,29 @@ const AddAToy = () => {
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Price</span>
                             </label>
-                            <input type="text" placeholder="Price" name="price" className="input input-bordered" />
+                            <input type="text" placeholder="Price" required name="price" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Rating</span>
                             </label>
-                            <input type="text" placeholder="Rating" name="rating" className="input input-bordered" />
+                            <input type="number" min="1" max="5" placeholder="Rating" required name="rating" className="input input-bordered" />
+                            
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Photo URL</span>
                             </label>
-                            <input type="text" placeholder="Photo URL" name="photoURL" className="input input-bordered" />
+                            <input type="url" placeholder="Photo URL" required name="photoURL" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Description</span>
                             </label>
-                            <textarea className="textarea textarea-bordered" placeholder="Description" name="description"></textarea>
+                            <textarea className="textarea required textarea-bordered" placeholder="Description" name="description"></textarea>
                         </div>
                         <div className="form-control">
-                            <select className="select w-full max-w-xs font-bold text-blue-800" name="subCategory">
+                            <select className="select w-full max-w-xs font-bold text-blue-800" required name="subCategory">
                                 <option disabled selected>Sub-Category</option>
                                 <option>bmw</option>
                                 <option>marcidies</option>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const ViewDetails = () => {
     const { id } = useParams();
@@ -26,9 +26,6 @@ const ViewDetails = () => {
                     <p><span className="font-bold text-blue-800">Rating:</span> {rating}</p>
                     <p><span className="font-bold text-blue-800">Available Quantity:</span> {availableQuantity}</p>
                     <p><span className="font-bold text-blue-800">Description:</span> {description}</p>
-                    <div className="card-actions ">
-                        <Link to='/'><button className="btn btn-sm btn-primary">Back To Home</button></Link>
-                    </div>
                 </div>
             </div>
         </div>
