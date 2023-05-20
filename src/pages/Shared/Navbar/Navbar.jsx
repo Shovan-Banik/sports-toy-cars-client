@@ -62,7 +62,7 @@ const Navbar = () => {
                     <label className="btn btn-ghost btn-circle avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
                         <div className="rounded-full">
                             {
-                                user && <img src={user?.photoURL} />
+                                user?.email && <img referrerPolicy="no-referrer" src={user?.photoURL} />
                             }
                         </div>
                     </label>

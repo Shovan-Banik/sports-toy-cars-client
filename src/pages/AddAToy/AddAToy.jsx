@@ -13,7 +13,7 @@ const AddAToy = () => {
         const sellerEmail = user?.email;
         const price = form.price.value;
         const rating = form.rating.value;
-        const photoUrl = form.photoURL.value;
+        const image = form.image.value;
         const description = form.description.value;
         const subCategory = form.subCategory.value;
 
@@ -24,7 +24,7 @@ const AddAToy = () => {
             sellerEmail,
             price,
             rating,
-            photoUrl,
+            image,
             description,
             subCategory
         }
@@ -58,7 +58,7 @@ const AddAToy = () => {
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Available Quantity</span>
                             </label>
-                            <input type="text" placeholder="Quantity" required name="quantity" className="input input-bordered" />
+                            <input type="number" min={0} placeholder="Quantity" required name="quantity" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -76,36 +76,39 @@ const AddAToy = () => {
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Price</span>
                             </label>
-                            <input type="text" placeholder="Price" required name="price" className="input input-bordered" />
+                            <input type="number" min={0} step="any" placeholder="Price" required name="price" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Rating</span>
                             </label>
-                            <input type="number" min="1" max="5" placeholder="Rating" required name="rating" className="input input-bordered" />
-                            
+                            <input type="number" min={0} max={5} step="any" placeholder="Rating" required name="rating" className="input input-bordered" />
+
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800">Photo URL</span>
                             </label>
-                            <input type="url" placeholder="Photo URL" required name="photoURL" className="input input-bordered" />
+                            <input type="url" placeholder="Photo URL" required name="image" className="input input-bordered" />
                         </div>
                         <div className="form-control">
-                            <label className="label">
-                                <span className="label-text font-bold text-blue-800">Description</span>
+                        <label className="label">
+                                <span className="label-text font-bold text-blue-800"> Please select an option</span>
                             </label>
-                            <textarea className="textarea required textarea-bordered" placeholder="Description" name="description"></textarea>
-                        </div>
-                        <div className="form-control">
-                            <select className="select w-full max-w-xs font-bold text-blue-800" required name="subCategory">
-                                <option disabled selected>Sub-Category</option>
+                            <select required className="select input-bordered max-w-xs font-bold text-blue-800" name="subCategory">
+                                <option disabled selected value=''>Sub-Category</option>
                                 <option>bmw</option>
-                                <option>marcidies</option>
-                                <option>lamborgini</option>
+                                <option >marcidies</option>
+                                <option >lamborgini</option>
                             </select>
                         </div>
                     </div>
+                    <div className="form-control">
+                            <label className="label">
+                                <span className="label-text font-bold text-blue-800">Description</span>
+                            </label>
+                            <textarea className="textarea textarea-bordered" rows={4} required placeholder="Description" name="description"></textarea>
+                        </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Add a Toy</button>
                     </div>

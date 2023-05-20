@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
-const ToyRow = ({ singleToy,index }) => {
+const MyToyRow = ({myToy,index}) => {
+    const{_id,image,sellerName,price,subCategory,name,availableQuantity}=myToy;
     const serial=index+1;
-    const { _id,image, sellerName, price, subCategory, name, availableQuantity } = singleToy;
+
     return (
         <tr>
             <td>{serial}</td>
@@ -16,9 +17,12 @@ const ToyRow = ({ singleToy,index }) => {
             <td>{subCategory}</td>
             <td>{price}</td>
             <td>{availableQuantity}</td>
-            <td><Link to={`/viewDetails/${_id}`}><button className="btn-sm btn-primary rounded">view Details</button></Link></td>
+            <td><Link><button className="btn-sm btn-primary rounded">Update</button>
+            </Link></td>
+            <td><Link><button className="btn-sm btn-primary rounded">Delete</button>
+            </Link></td>
         </tr>
     );
 };
 
-export default ToyRow;
+export default MyToyRow;

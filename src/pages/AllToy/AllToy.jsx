@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 import ToyRow from "./ToyRow";
 
 const AllToy = () => {
     const [allToys, setAllToys] = useState([]);
+
+    const{loading}=useContext(AuthContext);
 
     useEffect(() => {
         fetch('http://localhost:5000/toys')
@@ -11,7 +14,11 @@ const AllToy = () => {
                 setAllToys(data);
             })
     }, [])
-    console.log(allToys);
+
+    if(loading){
+        return <div className="mt-12 flex justify-center"><progress className="progress w-56 mt-12"></progress>;</div>
+    }
+    
 
     return (
         <div className="mt-12">
@@ -20,6 +27,8 @@ const AllToy = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
+                            <th></th>
+                            <th>Photo</th>
                             <th>Seller</th>
                             <th>Toy Name</th>
                             <th>Sub-category</th>
@@ -29,8 +38,8 @@ const AllToy = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {allToys.map((singleToy) => (
-                            <ToyRow key={singleToy._id} singleToy={singleToy} />
+                        {allToys.map((singleToy,index) => (
+                            <ToyRow key={singleToy._id} singleToy={singleToy} index={index}/>
                         ))}
                     </tbody>
                 </table>
