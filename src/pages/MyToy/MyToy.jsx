@@ -73,7 +73,7 @@ const MyToy = () => {
       <div className="mt-5">
         <h2 className="text-3xl font-bold text-center text-blue-800 my-5">My Toys Table Data</h2>
         <div className="flex justify-center gap-4 my-12">
-          <h3 className="text-2xl font-bold">Sort By:</h3>
+          <h3 className="text-2xl font-bold">Sort By Price:</h3>
           <button className="btn btn-primary btn-sm" onClick={() => sortToysByPrice('ascending')}>
             Ascending
           </button>

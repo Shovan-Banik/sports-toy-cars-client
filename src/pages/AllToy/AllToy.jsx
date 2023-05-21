@@ -44,14 +44,14 @@ const AllToy = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>No</th>
                             <th>Photo</th>
                             <th>Seller</th>
                             <th>Toy Name</th>
                             <th>Sub-category</th>
                             <th>Price</th>
                             <th>Available Quantity</th>
-                            <th></th>
+                            <th>View Details</th>
                         </tr>
                     </thead>
                     <tbody>

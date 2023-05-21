@@ -13,10 +13,9 @@ const Home = () => {
             <Banner></Banner>
             <PhotoGalary></PhotoGalary>
             <ShopByCategory></ShopByCategory>
-            <TeamMember></TeamMember>
             <ExtraSectionTwo></ExtraSectionTwo>
+            <TeamMember></TeamMember>
             <ExtraSectionOne></ExtraSectionOne>
-            
         </div>
     );
 };

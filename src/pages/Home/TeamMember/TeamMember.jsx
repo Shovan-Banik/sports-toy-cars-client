@@ -3,7 +3,7 @@ const TeamMember = () => {
     return (
         <div className="md:w-10/12 mx-auto mt-12">
             <div className="p-4">
-                <p className="text-3xl font-bold text-center text-gray-800">
+                <p className="text-5xl font-bold text-center text-blue-800">
                     Professional team
                 </p>
                 <p className="mb-32 text-xl font-normal text-center text-gray-500">
@@ -16,7 +16,7 @@ const TeamMember = () => {
                                 <img alt="profil" src="https://i.postimg.cc/YjcT1rbz/ceo1.jpg" className="mx-auto object-cover rounded-lg h-40 w-40  border-2 border-white dark:border-gray-800" />
                             </a>
                         </div>
-                        <div className="px-8 py-4 pt-24 bg-white rounded-lg shadow ">
+                        <div className="px-8 py-4 pt-24 bg-white rounded-lg shadow-xl ">
                             <div className="text-center">
                                 <p className="text-2xl text-gray-800 dark:text-white">
                                     Patrick Sebastien
@@ -68,7 +68,7 @@ const TeamMember = () => {
                                 <img alt="profil" src="https://i.postimg.cc/vTxpggLm/ceo2.jpg" className="mx-auto object-cover rounded-lg h-40 w-40  border-2 border-white dark:border-gray-800" />
                             </a>
                         </div>
-                        <div className="px-8 py-4 pt-24 bg-white rounded-lg shadow">
+                        <div className="px-8 py-4 pt-24 bg-white rounded-lg shadow-xl">
                             <div className="text-center">
                                 <p className="text-2xl text-gray-800 dark:text-white">
                                     Charlie
@@ -120,7 +120,7 @@ const TeamMember = () => {
                                 <img alt="profil" src="https://i.postimg.cc/NFWvp7fT/ceo3.jpg" className="mx-auto object-cover rounded-lg h-40 w-40  border-2 border-white dark:border-gray-800" />
                             </a>
                         </div>
-                        <div className="px-8 py-4 pt-24 bg-white rounded-lg shadow ">
+                        <div className="px-8 py-4 pt-24 bg-white rounded-lg shadow-xl ">
                             <div className="text-center">
                                 <p className="text-2xl text-gray-800 dark:text-white">
                                     Thierry Halliday
