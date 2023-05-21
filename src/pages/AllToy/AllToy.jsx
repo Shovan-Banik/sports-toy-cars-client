@@ -6,12 +6,12 @@ import useTitle from "../../hooks/useTitle";
 const AllToy = () => {
     const [allToys, setAllToys] = useState([]);
     const[searchText,setSearchText]=useState("");
-    useTitle('AllToy')
+    useTitle('AllToy');
 
     const { loading } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
+        fetch('https://sports-car-toys-zone.vercel.app/toys')
             .then(res => res.json())
             .then(data => {
                 setAllToys(data);
@@ -20,7 +20,7 @@ const AllToy = () => {
 
    const handleSearch=()=>{
 
-    fetch(`http://localhost:5000/productSearchByName/${searchText}`)
+    fetch(`https://sports-car-toys-zone.vercel.app/productSearchByName/${searchText}`)
     .then(res=>res.json())
     .then(data=>{
         setAllToys(data);

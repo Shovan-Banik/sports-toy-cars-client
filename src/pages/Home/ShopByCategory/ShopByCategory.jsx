@@ -8,7 +8,7 @@ const ShopByCategory = () => {
     const [categories, setCategories] = useState('bmw');
     useEffect(() => {
         // Fetch data from API
-        fetch(`http://localhost:5000/toys/${categories}`)
+        fetch(`https://sports-car-toys-zone.vercel.app/toys/${categories}`)
             .then(res => res.json())
             .then(data => setToys(data))
             .catch(error => console.error(error));

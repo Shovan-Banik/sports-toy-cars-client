@@ -10,7 +10,7 @@ const ExtraSectionOne = () => {
     return (
         <div className="mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center p-5 gap-5">
-                <div>
+                <div className="p-4">
                     <h2 data-aos="fade-left" data-aos-duration="500" data-aos-delay="500" className=' text-5xl text-blue-800 font-bold text-center my-4'>Our Mission</h2>
                     <p data-aos="fade-left" data-aos-duration="500" data-aos-delay="500" className="text-gray-700"> We are passionate about providing you with an exhilarating experience through our collection of high-quality sports car toys. Whether you are a car enthusiast or looking for the perfect gift, you have come to the right place.</p>
                     <div className="text-center">

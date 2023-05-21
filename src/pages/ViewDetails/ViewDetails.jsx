@@ -9,7 +9,7 @@ const ViewDetails = () => {
     useTitle('ViewDetails');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toy/${id}`)
+        fetch(`https://sports-car-toys-zone.vercel.app/toy/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

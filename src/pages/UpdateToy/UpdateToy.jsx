@@ -38,7 +38,7 @@ const UpdateToy = () => {
         }
         console.log(addToyObj);
 
-        fetch(`http://localhost:5000/myUpdatedToy/${id}`, {
+        fetch(`https://sports-car-toys-zone.vercel.app/myUpdatedToy/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
