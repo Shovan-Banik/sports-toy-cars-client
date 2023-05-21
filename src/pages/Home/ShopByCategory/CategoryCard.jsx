@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Rating } from '@smastrom/react-rating';
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
@@ -8,6 +8,27 @@ import { useContext } from "react";
 const CategoryCard = ({ toy }) => {
     const { _id, image, name, price, rating } = toy;
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleDetails = id => {
+        // console.log(id);
+        if (!user) {
+            Swal.fire({
+                title: "Access Denied",
+                text: "Please login to view this page.",
+                icon: "error",
+                confirmButtonText: "OK",
+            })
+                .then(result => {
+                    if (result.isConfirmed) {
+                        navigate(`/viewDetails/${id}`);
+                    }
+                })
+        }
+        else {
+            navigate(`/viewDetails/${id}`);
+        }
+    }
 
     return (
         <div className="card w-full bg-base-100 shadow-xl border relative group overflow-hidden">
@@ -23,18 +44,9 @@ const CategoryCard = ({ toy }) => {
                 <p>Price: {price}</p>
                 <div><Rating style={{ maxWidth: 100 }} value={rating} readOnly /></div>
                 <div className="card-actions">
-                    <Link to={`/viewDetails/${_id}`}><button onClick={() => {
-                        if (!user) {
-                            // Show success SweetAlert notification
-                            Swal.fire({
-                                title: "Access Denied",
-                                text: "Please login to view this page.",
-                                icon: "error",
-                                confirmButtonText: "OK",
-                                timer: 10000,
-                            });
-                        }
-                    }} className="btn btn-sm btn-primary">View Details</button></Link>
+                    <button onClick={() => handleDetails(_id)} className="btn btn-sm btn-primary">
+                        View Details
+                    </button>
                 </div>
             </div>
         </div>
@@ -42,3 +54,4 @@ const CategoryCard = ({ toy }) => {
 };
 
 export default CategoryCard;
+

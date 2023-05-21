@@ -3,10 +3,12 @@ import { AuthContext } from "../../providers/AuthProvider";
 import ToyRow from "./ToyRow";
 import useTitle from "../../hooks/useTitle";
 
+
 const AllToy = () => {
     const [allToys, setAllToys] = useState([]);
     const[searchText,setSearchText]=useState("");
     useTitle('AllToy');
+    
 
     const { loading } = useContext(AuthContext);
 
@@ -30,6 +32,9 @@ const AllToy = () => {
     if (loading) {
         return <div className="mt-12 flex justify-center"><progress className="progress w-56 mt-12"></progress>;</div>
     }
+
+    
+
 
     return (
         <div className="mt-12">

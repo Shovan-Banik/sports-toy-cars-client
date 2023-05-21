@@ -6,7 +6,7 @@ import { Rating } from '@smastrom/react-rating';
 const ViewDetails = () => {
     const { id } = useParams();
     const [detailsData, setDetailsData] = useState({});
-    const { image, name, description, price, rating, subCategory, availableQuantity } = detailsData;
+    const { image, name, description, price, rating, subCategory, availableQuantity, sellerEmail, sellerName } = detailsData;
     useTitle('ViewDetails');
 
     useEffect(() => {
@@ -25,8 +25,10 @@ const ViewDetails = () => {
                 <div className="card-body space-y-0">
                     <p className="font-bold text-blue-800">Sub-Category: {subCategory}</p>
                     <p><span className="font-bold text-blue-800">Price:</span> {price}</p>
-                    <p><span className="font-bold flex text-blue-800">Rating: <Rating style={{ maxWidth: 100 }} value={rating} readOnly /></span> </p>              
+                    <p><span className="font-bold flex text-blue-800">Rating: <Rating style={{ maxWidth: 100 }} value={rating} readOnly /></span> </p>
                     <p><span className="font-bold text-blue-800">Available Quantity:</span> {availableQuantity}</p>
+                    <p><span className="font-bold text-blue-800">Seller Email:</span> {sellerEmail}</p>
+                    <p><span className="font-bold text-blue-800">Seller Name:</span> {sellerName}</p>
                     <p><span className="font-bold text-blue-800">Description:</span> {description}</p>
                 </div>
             </div>
