@@ -14,14 +14,14 @@ const MyToy = () => {
 
   useEffect(() => {
     // Fetch data from API
-    fetch(`https://sports-car-toys-zone.vercel.app/myToys?email=${user.email}&sort=${sortOrder}`)
+    fetch(`https://sports-car-toys-zone.vercel.app/myToys/${user?.email}`)
       .then(res => res.json())
       .then(data => {
         setMyToys(data);
         setSortedToys(data);
       })
       .catch(error => console.error(error));
-  }, [user?.email, sortOrder]);
+  }, [user]);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -55,9 +55,26 @@ const MyToy = () => {
     });
   };
 
-  const handleSortChange = (e) => {
+  const sortToysByPrice = (order) => {
+    console.log(order, user.email)
+    fetch(`http://localhost:5000/myToys?email=${user.email}&sort=${order}`)
+      .then(res => res.json())
+      .then(result => {
+        console.log(result)
+        setMyToys(result);
+      })
 
-    setSortOrder(e.target.value);
+
+    // const sorted = [...sortedToys];
+
+    // if (order === 'ascending') {
+    //   sorted.sort((a, b) => a.price - b.price);
+    // } else if (order === 'descending') {
+    //   sorted.sort((a, b) => b.price - a.price);
+    // }
+
+    // setSortOrder(order);
+    // setSortedToys(sorted);
   };
 
   return (
@@ -65,15 +82,13 @@ const MyToy = () => {
       <div className="mt-5">
         <h2 className="text-3xl font-bold text-center text-blue-800 my-5">My Toys Table Data</h2>
         <div className="flex justify-center gap-4 my-12">
-          <select
-            className="block px-3 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-52 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-            name="animals"
-            onChange={handleSortChange}
-          >
-            <option>Filter By Price</option>
-            <option value="ascending">Ascending</option>
-            <option value="descending">Descending</option>
-          </select>
+          <h3 className="text-2xl font-bold">Sort By Price:</h3>
+          <button className="btn btn-primary btn-sm" onClick={() => sortToysByPrice('ascending')}>
+            Ascending
+          </button>
+          <button className="btn btn-primary btn-sm" onClick={() => sortToysByPrice('descending')}>
+            Descending
+          </button>
         </div>
         <div className="overflow-x-auto">
           <table className="table w-full">
