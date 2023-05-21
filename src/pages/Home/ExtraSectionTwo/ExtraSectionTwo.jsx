@@ -7,7 +7,7 @@ const ExtraSectionTwo = () => {
         AOS.init();
     }, []);
     return (
-        <div className="mt-24">
+        <div className="mt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center p-5 gap-5">
                 <div data-aos="fade-up" data-aos-duration="4000" data-aos-delay="500" data-aos-easing="ease-in-out">
                     <img className="rounded-xl" src="https://i.postimg.cc/K8QWrjRY/about.jpg" alt="mission" />

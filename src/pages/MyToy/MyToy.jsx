@@ -6,7 +6,7 @@ import useTitle from "../../hooks/useTitle";
 
 const MyToy = () => {
   const [myToys, setMyToys] = useState([]);
-  const { user, loading } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [sortOrder, setSortOrder] = useState('ascending');
   const [sortedToys, setSortedToys] = useState([]);
 
@@ -22,10 +22,6 @@ const MyToy = () => {
       })
       .catch(error => console.error(error));
   }, [user]);
-
-  if (loading) {
-    return <div className="mt-12 flex justify-center"><progress className="progress w-56 mt-12"></progress>;</div>
-  }
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -89,15 +85,15 @@ const MyToy = () => {
           <table className="table w-full">
             <thead>
               <tr>
-                <th></th>
+                <th>Serial</th>
                 <th>Photo</th>
                 <th>Seller</th>
                 <th>Toy Name</th>
                 <th>Sub-category</th>
                 <th>Price</th>
-                <th>Available Quantity</th>
-                <th></th>
-                <th></th>
+                <th>Quantity</th>
+                <th>Update</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
