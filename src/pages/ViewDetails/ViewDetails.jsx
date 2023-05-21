@@ -17,10 +17,6 @@ const ViewDetails = () => {
                 setDetailsData(data)
             })
     }, [id])
-
-
-
-
     return (
         <div>
             <h2 className="text-3xl text-center font-bold my-12 text-blue-800">View Details Of: {name}</h2>

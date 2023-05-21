@@ -22,10 +22,10 @@ const ShopByCategory = () => {
         <div className='mt-12'>
             <h2 className='text-5xl text-center font-bold my-12 text-blue-800'>Shop By Category</h2>
             <Tabs>
-                <TabList className='md:w-1/4 mx-auto md:flex mb-12'>
-                    <Tab className="mr-2 px-4 mb-2 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('bmw')}>BMW</Tab>
-                    <Tab className="mr-2 px-4 mb-2 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('lamborghini')}>Lamborghini</Tab>
-                    <Tab className="mr-2 px-4 mb-2 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('mercedes')}>Mercedes</Tab>
+                <TabList className='md:w-1/4 w-1/2 mx-auto md:flex mb-12'>
+                    <Tab className="md:mr-2  px-4 mb-2 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('bmw')}>BMW</Tab>
+                    <Tab className="md:mr-2 px-4 mb-2 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('lamborghini')}>Lamborghini</Tab>
+                    <Tab className="md:mr-2 px-4 mb-2 py-2 bg-primary text-white rounded-md cursor-pointer" onClick={() => handleTabClick('mercedes')}>Mercedes</Tab>
                 </TabList>
                 <TabPanel>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>

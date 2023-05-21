@@ -10,7 +10,7 @@ const CategoryCard = ({ toy }) => {
     const { user } = useContext(AuthContext);
 
     return (
-        <div className="card w-full bg-base-100 shadow-2xl border relative group overflow-hidden">
+        <div className="card w-full bg-base-100 shadow-xl border relative group overflow-hidden">
             <figure>
                 <img
                     className="h-[300px] transition-transform duration-300 transform-gpu group-hover:scale-105"
@@ -21,7 +21,7 @@ const CategoryCard = ({ toy }) => {
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>Price: {price}</p>
-                <p><Rating style={{ maxWidth: 100 }} value={rating} readOnly /></p>
+                <div><Rating style={{ maxWidth: 100 }} value={rating} readOnly /></div>
                 <div className="card-actions">
                     <Link to={`/viewDetails/${_id}`}><button onClick={() => {
                         if (!user) {

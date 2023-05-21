@@ -13,8 +13,8 @@ const ExtraSectionTwo = () => {
                     <img className="rounded-xl" src="https://i.postimg.cc/K8QWrjRY/about.jpg" alt="mission" />
                 </div>
                 <div>
-                    <h2 data-aos="fade-right" data-aos-duration="500" data-aos-delay="500" className=' text-5xl text-blue-800 font-bold text-center my-4'>Who We are?</h2>
-                    <p data-aos="fade-right" data-aos-duration="500" data-aos-delay="500" className="text-gray-700 text-justify"> We are a passionate team of car enthusiasts dedicated to bringing the excitement of sports cars into the world of toys. With a deep appreciation for automotive engineering and design, we strive to provide our customers with an unparalleled experience.</p>
+                    <h2 data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" className=' text-5xl text-blue-800 font-bold text-center my-4'>Who We are?</h2>
+                    <p data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" className="text-gray-700 text-justify"> We are a passionate team of car enthusiasts dedicated to bringing the excitement of sports cars into the world of toys. With a deep appreciation for automotive engineering and design, we strive to provide our customers with an unparalleled experience.</p>
                     <div className="text-center">
                         <button className="btn-primary btn mt-5 ">Show More</button>
                     </div>

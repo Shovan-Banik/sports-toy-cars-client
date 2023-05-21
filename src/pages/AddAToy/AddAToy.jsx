@@ -49,7 +49,7 @@ const AddAToy = () => {
             })
     };
     return (
-        <div className="md:w-2/3 mx-auto border-2 border-blue-800 p-4 mt-12 rounded-xl">
+        <div className="md:w-2/3 md:mx-auto border-2 border-blue-800 p-4 mt-12 rounded-xl mx-2">
             <h2 className="font-bold text-blue-800 text-3xl my-5 text-center">Add Your Toy Please</h2>
             <div className="card-body">
                 <form onSubmit={handleAddToy}>
