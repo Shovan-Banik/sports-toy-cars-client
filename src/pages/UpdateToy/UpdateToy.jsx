@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
-    const { name, availableQuantity, price, rating, image,description } = useLoaderData();
+    const { name, availableQuantity, price, rating, image,description,subCategory } = useLoaderData();
     console.log(name, availableQuantity);
     const { id } = useParams();
     const { user } = useContext(AuthContext);
@@ -104,7 +104,7 @@ const UpdateToy = () => {
                             <label className="label">
                                 <span className="label-text font-bold text-blue-800"> Please select an option</span>
                             </label>
-                            <select className="block px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="subCategory" disabled>
+                            <select className="block px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="subCategory" defaultValue={subCategory} disabled>
                                 <option disabled>
                                     Category
                                 </option>
