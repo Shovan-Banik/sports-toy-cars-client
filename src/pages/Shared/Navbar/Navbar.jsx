@@ -58,7 +58,7 @@ const Navbar = () => {
                         }
                     </li>
                 </div>
-                <div>
+              {user &&  <div>
                     <label className="btn btn-ghost btn-circle avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
                         <div className="rounded-full">
                             {
@@ -66,7 +66,7 @@ const Navbar = () => {
                             }
                         </div>
                     </label>
-                </div>
+                </div> }
             </div>
         </div>
     );

@@ -5,9 +5,11 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaGoogle } from 'react-icons/fa';
 import useTitle from "../../hooks/useTitle";
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const [err,setErr]=useState("");
+    const [err, setErr] = useState("");
     const { signIn, googleSignIn } = useContext(AuthContext);
     useTitle('Login')
     const navigate = useNavigate();
@@ -26,9 +28,12 @@ const Login = () => {
                 console.log(user);
                 navigate(from, { replace: true });
             })
-            .then(error => {
-                setErr(error.message);
-            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                if (errorMessage) {
+                    setErr("Check your email and password");
+                }
+            });
     }
     const handleGoogleLogin = () => {
         googleSignIn()
@@ -40,11 +45,7 @@ const Login = () => {
             .catch(error => {
                 console.log(error);
             })
-
     }
-
-
-
     return (
         <div className="grid grid-cols-1 md:grid-cols-2  items-center md:mt-12">
             <div>

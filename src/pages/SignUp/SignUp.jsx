@@ -6,10 +6,10 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import useTitle from '../../hooks/useTitle';
 const SignUp = () => {
-    const [err,setErr]=useState("");
-    const { createUser, profileUpdate,googleSignIn} = useContext(AuthContext);
+    const [err, setErr] = useState("");
+    const { createUser, profileUpdate, googleSignIn } = useContext(AuthContext);
     useTitle('SignUp');
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -26,21 +26,23 @@ const SignUp = () => {
                 navigate('/login');
                 form.reset();
             })
-            .catch(error =>{
-                setErr(error.message);
+            .catch(error => {
+                    if(error.message==='Firebase: Password should be at least 6 characters (auth/weak-password).'){
+                        setErr('Password should be at least 6 characters');
+                    }
             });
     }
 
-    const handleGoogleLogin=()=>{
+    const handleGoogleLogin = () => {
         googleSignIn()
-        .then(result=>{
-            const googleLoggedUser=result.user;
-            console.log(googleLoggedUser);
-            navigate('/');
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+            .then(result => {
+                const googleLoggedUser = result.user;
+                console.log(googleLoggedUser);
+                navigate('/');
+            })
+            .catch(error => {
+                console.log(error);
+            })
 
     }
 
@@ -87,10 +89,10 @@ const SignUp = () => {
                             </div>
                         </form>
                         <div className='mt-2'>
-                                <button onClick={handleGoogleLogin} className="btn btn-primary btn-block gap-2">
-                                    Sign In with Google<FaGoogle className='text-xl'></FaGoogle>
-                                </button>
-                            </div>
+                            <button onClick={handleGoogleLogin} className="btn btn-primary btn-block gap-2">
+                                Sign In with Google<FaGoogle className='text-xl'></FaGoogle>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
